@@ -1,0 +1,39 @@
+.footer {
+	background-color: $darkviolet;
+	padding: 2rem 1rem;
+
+	* {
+		color: $textwhite;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		max-width: 70rem;
+		margin: 0 auto;
+
+		li {
+			display: block;
+			position: relative;
+			padding: 0 3rem;
+
+			a {
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		@media all and (max-width: $tabletWidth) {
+			display: block;
+
+			li {
+				padding-bottom: 1.5rem;
+			}
+		}
+	}
+
+}

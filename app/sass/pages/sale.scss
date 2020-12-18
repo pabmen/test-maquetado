@@ -1,0 +1,12 @@
+@import '../vars';
+
+.content-wrapper {
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: 26rem auto;
+	column-gap: 1rem;
+
+	@media all and (max-width: $tabletWidth) {
+		display: block;
+	}
+}

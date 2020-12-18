@@ -1,0 +1,81 @@
+.sidebar {
+
+	&__filter--wrapper {
+		margin-bottom: 1rem;
+	}
+
+	// filter category accordion
+	&__filter--title-checkbox {
+		display: none;
+
+		~ .sidebar__filter--box {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height $transition-fast;
+		}
+
+		&:checked {
+			~ .sidebar__filter--box {
+				max-height: 14rem
+			}
+
+			+ .sidebar__filter--title:after {
+				content: "–";
+			}
+		} 
+	}
+
+	&__filter--title {
+		background-color: $gray;
+		position: relative;
+		display: block;
+		cursor: pointer;
+		padding: .5rem 1.6rem;
+		font-weight: bold;
+		margin-bottom: .5rem;
+
+		&:hover {
+			box-shadow: 0 0 1px transparentize($textblack, 0.5);
+		}
+
+		&:after {
+			display: none;
+			content: "+";
+			position: absolute;
+			top: 50%;
+			right: 1.6rem;
+			transform: translateY(-50%);
+		}
+
+		&:hover:after {
+			display: block;
+		}
+	}
+
+	&__filter--item {
+		cursor: pointer;
+		text-transform: capitalize;
+		padding-left: 1.6rem;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__filter--checkbox {
+		display: none;
+
+		&:checked + * {
+			color: $darkviolet;
+			background-color: $gray;
+			box-shadow: 0 0 1px transparentize($textblack, 0.5);
+			padding: .125rem 1rem .125rem .65rem;
+
+			&:before {
+				content: "+";
+				display: inline-block;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

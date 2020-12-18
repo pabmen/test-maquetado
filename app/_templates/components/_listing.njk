@@ -1,0 +1,25 @@
+{%- macro random_int(len) -%}
+	{%- for _ in range(len) -%}
+		{{ range(10) | random }}
+	{%- endfor -%}
+{%- endmacro -%}
+
+{% set id = "listing-" + random_int(10) %}
+<form>
+	<select data-target="{{id}}" class="listing__container--grid-selector">
+		{% for item in grids -%}
+		<option class="{{item.class}}" value="{{item.value}}">{{item.label}}</option>
+		{% endfor -%}
+	</select>
+</form>
+<ul class="listing__container" id="{{id}}">
+	{% for item in listing_data -%}
+	<li data-category="{{item.category}}" data-size="{{item.size}}" data-color="{{item.color}}">
+		<a class="listing__container--target" href="{{item.url}}">
+			<img class="listing__container--thumb" src="{{item.thumb}}" alt="">
+			<h2 class="listing__container--title">{{item.title}}</h2>
+			<p class="listing__container--price">{{item.price}}</p>
+		</a>
+	</li>
+	{%- endfor %}
+</ul>
