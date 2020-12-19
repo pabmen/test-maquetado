@@ -1072,11 +1072,17 @@ html.no-scroll body {
 
 .la-preuve-wrapper .content-wrapper {
   padding: 0 1rem;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 26rem auto;
   grid-template-columns: 26rem auto;
   -webkit-column-gap: 1rem;
      -moz-column-gap: 1rem;
           column-gap: 1rem;
+}
+
+.la-preuve-wrapper .content-wrapper .listing {
+  -ms-grid-column: 2;
 }
 
 @media all and (max-width: 640px) {
