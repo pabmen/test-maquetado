@@ -147,6 +147,15 @@ hr {
 	max-width: 112rem;
 }
 
+.la-preuve-wrapper {
+	transition: all $transition-normal;
+	padding-top: 15rem;
+
+	@media all and (max-width: $mobileWidth) {
+		padding-top: 9rem;
+	}
+}
+
 @media all and (min-width: $mobileWidth + 1) {
 	.mobile-only {
 		display: none !important;

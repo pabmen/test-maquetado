@@ -47,28 +47,23 @@ html.no-scroll {
     }
 }
 
-
-.la-preuve-wrapper {
-    padding-top: 15rem;
-    
-    @media all and (max-width: $mobileWidth) {
-        padding-top: 9rem;
-    }
+.la-preuve {
+    transition: transform $transition-fast;
 
     * {
         font-family: 'Roboto', sans-serif;
         font-size: 1.6rem;
     }
 
-	// common styles (works with normalize), general styles
-	@import './partials/common';
+    // common styles (works with normalize), general styles
+    @import './partials/common';
 
 
-	// low-priority styles, here we put debug css, mobile console styles, etc
-	@import './partials/debug';
+    // low-priority styles, here we put debug css, mobile console styles, etc
+    @import './partials/debug';
 
-	// Accessibility styles
-	@import './partials/accessibility';
+    // Accessibility styles
+    @import './partials/accessibility';
 
     // general components
     @import './components/grid';
@@ -82,5 +77,4 @@ html.no-scroll {
 
     // custom view styles
     @import './pages/sale';
-
 }
