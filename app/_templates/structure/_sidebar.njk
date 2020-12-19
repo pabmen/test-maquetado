@@ -20,8 +20,8 @@
 					{% for value in item.values -%}
 					<li data-filter="{{value}}">
 						{% set id = "filter-" + random_int(10) %}
-						<input class="sidebar__filter--checkbox visually-hidden" type="checkbox" value="{{value}}" data-type="{{item.type}}" id="{{id}}" />
-						<label class="sidebar__filter--item" for="{{id}}">{{value}}</label>
+						<input class="sidebar__filter--item visually-hidden" type="checkbox" value="{{value}}" data-type="{{item.type}}" id="{{id}}" />
+						<label class="sidebar__filter--item--label" for="{{id}}">{{value}}</label>
 					</li>
 					{%- endfor %}
 				</ul>

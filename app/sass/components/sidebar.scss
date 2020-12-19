@@ -8,16 +8,29 @@
 	&__filter--title-checkbox {
 		//display: none;
 
+		// outline para visualizar el titulo de seccion a colapsar
 		&:focus + label {
-			outline: 1px solid black
+			outline: 1px solid black;
+
+			// muestra estado de checkbox (+/-) si esta o no colapasada la seccion
+			&:after {
+				display: block;
+			}
 		}
 
+		// evit focus en los filtros cuando esta colapsada la seccion
+		&:not(:checked):focus ~ .sidebar__filter--box input{
+			display: none;
+		}
+
+		// seccion colapsable
 		~ .sidebar__filter--box {
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height $transition-fast;
 		}
 
+		// colapsa/descolapsa seccion
 		&:checked {
 			~ .sidebar__filter--box {
 				max-height: 14rem
@@ -42,6 +55,7 @@
 			box-shadow: 0 0 1px transparentize($textblack, 0.5);
 		}
 
+		// estado de titulo de seccion desactivado por default
 		&:after {
 			display: none;
 			content: "+";
@@ -51,22 +65,14 @@
 			transform: translateY(-50%);
 		}
 
+		// mostrar estado de titulo de seccion activo
 		&:hover:after {
 			display: block;
 		}
 	}
 
+	// checkbox de filtros de categoria, medida, color
 	&__filter--item {
-		cursor: pointer;
-		text-transform: capitalize;
-		padding-left: 1.6rem;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	&__filter--checkbox {
 		&:focus + label {
 			outline: 1px solid black
 		}
@@ -82,6 +88,17 @@
 				display: inline-block;
 				transform: rotate(-45deg);
 			}
+		}
+	}
+
+	// label etiqueta defiltros de categoria, medida, color
+	&__filter--item--label {
+		cursor: pointer;
+		text-transform: capitalize;
+		padding-left: 1.6rem;
+
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }

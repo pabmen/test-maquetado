@@ -341,7 +341,7 @@ template {
 
 font-face {
   font-family: 'Roboto';
-  src: url("/assets/fonts/Roboto-Regular.woff2") format("woff2"), url("/assets/fonts/Roboto-Regular.woff") format("woff");
+  src: url("/assets/fonts/roboto-v20-latin-regular.woff2") format("woff2"), url("/assets/fonts/roboto-v20-latin-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -349,7 +349,7 @@ font-face {
 
 font-face {
   font-family: 'Roboto';
-  src: url("/assets/fonts/Roboto-Bold.woff2") format("woff2"), url("/assets/fonts/Roboto-Bold.woff") format("woff");
+  src: url("/assets/fonts/roboto-v20-latin-500.woff2") format("woff2"), url("/assets/fonts/roboto-v20-latin-500.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -357,7 +357,7 @@ font-face {
 
 font-face {
   font-family: 'Roboto';
-  src: url("/assets/fonts/Roboto-Lightwoff2") format("woff2"), url("/assets/fonts/Roboto-Lightwoff") format("woff");
+  src: url("/assets/fonts/roboto-v20-latin-300.woff2") format("woff2"), url("/assets/fonts/roboto-v20-latin-300.woff") format("woff");
   font-weight: lighter;
   font-style: normal;
   font-display: swap;
@@ -869,7 +869,7 @@ html.no-scroll body {
 }
 
 .la-preuve-wrapper .listing form select:focus {
-  outline: none;
+  outline: 1px solid #000;
 }
 
 .la-preuve-wrapper .listing form select option {
@@ -878,27 +878,35 @@ html.no-scroll body {
 
 .la-preuve-wrapper .listing .listing__container {
   width: 100%;
-  display: grid;
-  grid-column-gap: 1.6rem;
-  grid-row-gap: 3.2rem;
   margin-bottom: 10rem;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.la-preuve-wrapper .listing .listing__container[data-layout=cols-1] {
-  grid-template-columns: repeat(1, 1fr);
+.la-preuve-wrapper .listing .listing__container > * {
+  width: 33.33333%;
 }
 
-.la-preuve-wrapper .listing .listing__container[data-layout=cols-2] {
-  grid-template-columns: repeat(2, 1fr);
+@media all and (max-width: 640px) {
+  .la-preuve-wrapper .listing .listing__container > * {
+    width: 33.33333%;
+  }
 }
 
-.la-preuve-wrapper .listing .listing__container[data-layout=cols-3] {
-  grid-template-columns: repeat(3, 1fr);
+.la-preuve-wrapper .listing .listing__container[data-layout=cols-1] > * {
+  width: 100%;
 }
 
-.la-preuve-wrapper .listing .listing__container[data-layout=cols-4] {
-  grid-template-columns: repeat(4, 1fr);
+.la-preuve-wrapper .listing .listing__container[data-layout=cols-2] > * {
+  width: 50%;
+}
+
+.la-preuve-wrapper .listing .listing__container[data-layout=cols-3] > * {
+  width: 33.33333%;
+}
+
+.la-preuve-wrapper .listing .listing__container[data-layout=cols-4] > * {
+  width: 25%;
 }
 
 .la-preuve-wrapper .listing .listing__container--target {
@@ -906,11 +914,16 @@ html.no-scroll body {
   transition: all 0.35s ease;
   overflow: hidden;
   text-decoration: none;
+  margin: .5rem;
 }
 
-.la-preuve-wrapper .listing .listing__container--target:hover img {
+.la-preuve-wrapper .listing .listing__container--target:hover .listing__container--thumb, .la-preuve-wrapper .listing .listing__container--target:focus .listing__container--thumb {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.la-preuve-wrapper .listing .listing__container--target:focus {
+  outline: 1px solid #000;
 }
 
 .la-preuve-wrapper .listing .listing__container--thumb {
@@ -939,12 +952,6 @@ html.no-scroll body {
   content: "$";
 }
 
-@media all and (max-width: 640px) {
-  .la-preuve-wrapper .listing .listing__container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 .la-preuve-wrapper .menu {
   display: none;
   width: 100vw;
@@ -970,6 +977,14 @@ html.no-scroll body {
 
 .la-preuve-wrapper .sidebar__filter--title-checkbox:focus + label {
   outline: 1px solid black;
+}
+
+.la-preuve-wrapper .sidebar__filter--title-checkbox:focus + label:after {
+  display: block;
+}
+
+.la-preuve-wrapper .sidebar__filter--title-checkbox:not(:checked):focus ~ .sidebar__filter--box input {
+  display: none;
 }
 
 .la-preuve-wrapper .sidebar__filter--title-checkbox ~ .sidebar__filter--box {
@@ -1014,32 +1029,32 @@ html.no-scroll body {
   display: block;
 }
 
-.la-preuve-wrapper .sidebar__filter--item {
-  cursor: pointer;
-  text-transform: capitalize;
-  padding-left: 1.6rem;
-}
-
-.la-preuve-wrapper .sidebar__filter--item:hover {
-  text-decoration: underline;
-}
-
-.la-preuve-wrapper .sidebar__filter--checkbox:focus + label {
+.la-preuve-wrapper .sidebar__filter--item:focus + label {
   outline: 1px solid black;
 }
 
-.la-preuve-wrapper .sidebar__filter--checkbox:checked + * {
+.la-preuve-wrapper .sidebar__filter--item:checked + * {
   color: rgba(16, 2, 23, 0.9);
   background-color: #E4E8EE;
   box-shadow: 0 0 1px rgba(3, 11, 28, 0.5);
   padding: .125rem 1rem .125rem .65rem;
 }
 
-.la-preuve-wrapper .sidebar__filter--checkbox:checked + *:before {
+.la-preuve-wrapper .sidebar__filter--item:checked + *:before {
   content: "+";
   display: inline-block;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.la-preuve-wrapper .sidebar__filter--item--label {
+  cursor: pointer;
+  text-transform: capitalize;
+  padding-left: 1.6rem;
+}
+
+.la-preuve-wrapper .sidebar__filter--item--label:hover {
+  text-decoration: underline;
 }
 
 .la-preuve-wrapper .text-xlarge {

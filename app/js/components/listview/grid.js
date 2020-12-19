@@ -8,8 +8,13 @@ class ListviewGrid {
 	constructor(context) {
 		this.selector = context.querySelector('.listing__container--grid-selector')
 		if (this.selector) {
+			this.reset()
 			this.bindings()
 		}
+	}
+
+	reset() {
+		this.selector.selectedIndex = 0
 	}
 
 	bindings() {
