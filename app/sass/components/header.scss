@@ -30,7 +30,7 @@
 			filter: invert(100%);
 		}
 
-		@media all and (max-width: $tabletWidth) {
+		@media all and (max-width: $mobileWidth) {
 			display: block;
 		}
 	}
@@ -39,7 +39,7 @@
 		max-width: 20.6rem;
 		margin: 1.5rem 0;
 		
-		@media all and (max-width: $tabletWidth) {
+		@media all and (max-width: $mobileWidth) {
 			max-width: 14rem;
 		}
 	}
@@ -114,7 +114,7 @@
 			}
 		}
 
-		@media all and (max-width: $tabletWidth) {
+		@media all and (max-width: $mobileWidth) {
 			display: none;
 		}
 	}

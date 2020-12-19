@@ -51,7 +51,7 @@ html.no-scroll {
 .la-preuve-wrapper {
     padding-top: 15rem;
     
-    @media all and (max-width: $tabletWidth) {
+    @media all and (max-width: $mobileWidth) {
         padding-top: 9rem;
     }
 
@@ -76,6 +76,7 @@ html.no-scroll {
     @import './components/footer';
     @import './components/images';
     @import './components/listing';
+    @import './components/menu';
     @import './components/sidebar';
     @import './components/typography';
 

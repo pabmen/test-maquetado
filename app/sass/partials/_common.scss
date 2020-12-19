@@ -147,13 +147,13 @@ hr {
 	max-width: 112rem;
 }
 
-@media all and (min-width: $tabletWidth + 1) {
+@media all and (min-width: $mobileWidth + 1) {
 	.mobile-only {
 		display: none !important;
 	}
 }
 
-@media all and (max-width: $tabletWidth) {
+@media all and (max-width: $mobileWidth) {
 	.desktop-only {
 		display: none !important;
 	}

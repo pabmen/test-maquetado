@@ -1,0 +1,23 @@
+.menu {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 110;
+	background-color: $darkviolet;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	
+	&__links {
+		text-align: center;
+		color: $textwhite;
+	}
+
+	@media all and (max-width: $mobileWidth) {
+		//display: flex;
+		//height: 0;
+	}
+}

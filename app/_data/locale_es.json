@@ -49,31 +49,32 @@
 				"class": "",
 				"icon": "/assets/iconos/shopping-cart-solid.svg"
 			}
-		],
-		"topbar": [
-			{
-				"label": "Sale",
-				"url": "/",
-				"class": "active"
-			},
-			{
-				"label": "E-shop",
-				"url": "/"
-			},
-			{
-				"label": "Lookbook",
-				"url": "/"
-			},
-			{
-				"label": "Campaña",
-				"url": "/"
-			},
-			{
-				"label": "Locales",
-				"url": "/"
-			}
 		]
 	},
+
+	"navigation": [
+		{
+			"label": "Sale",
+			"url": "/",
+			"class": "active"
+		},
+		{
+			"label": "E-shop",
+			"url": "/"
+		},
+		{
+			"label": "Lookbook",
+			"url": "/"
+		},
+		{
+			"label": "Campaña",
+			"url": "/"
+		},
+		{
+			"label": "Locales",
+			"url": "/"
+		}
+	],
 
 	"sidebar": {
 		"title": "Zapatillas",
@@ -116,6 +117,12 @@
 	},
 
 	"grids": [
+		{
+			"label": "Auto",
+			"class": "",
+			"value": "",
+			"selected": true
+		},
 		{
 			"label": "1 columna",
 			"class": "mobile-only",

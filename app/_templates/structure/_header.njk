@@ -2,7 +2,7 @@
 	<div class="constrain">
 		<div class="relative">
 			<div class="header__mobile-menu">
-				<a href="#">
+				<a href="#" class="header__mobile-menu--toggle">
 					<img src="{{header.mobile_menu.icon}}" alt="{{header.mobile_menu.caption}}">
 				</a>
 			</div>
@@ -21,7 +21,7 @@
 		</div>
 		<nav class="header__topbar">
 			<ul>
-				{% for item in header.topbar -%}
+				{% for item in navigation -%}
 				<li><a href="{{item.url}}" class="{{item.class}}">{{item.label}}</a></li>
 				{%- endfor %}
 			</ul>

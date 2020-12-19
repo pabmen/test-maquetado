@@ -1,0 +1,7 @@
+<div class="menu">
+	<ul class="menu__links">
+		{% for item in navigation -%}
+		<li><a href="{{item.url}}" class="{{item.class}}">{{item.label}}</a></li>
+		{%- endfor %}
+	</ul>
+</div>

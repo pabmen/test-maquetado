@@ -6,7 +6,11 @@
 
 	// filter category accordion
 	&__filter--title-checkbox {
-		display: none;
+		//display: none;
+
+		&:focus + label {
+			outline: 1px solid black
+		}
 
 		~ .sidebar__filter--box {
 			max-height: 0;
@@ -63,7 +67,9 @@
 	}
 
 	&__filter--checkbox {
-		display: none;
+		&:focus + label {
+			outline: 1px solid black
+		}
 
 		&:checked + * {
 			color: $darkviolet;

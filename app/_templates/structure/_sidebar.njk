@@ -14,13 +14,13 @@
 
 			{% set id = "title-" + random_int(10) %}
 			<div class="sidebar__filter--wrapper">
-				<input type="checkbox" checked id="{{id}}" class="sidebar__filter--title-checkbox">
+				<input type="checkbox" checked id="{{id}}" class="sidebar__filter--title-checkbox visually-hidden">
 				<label for="{{id}}" class="sidebar__filter--title">{{item.label}}</label>
 				<ul class="sidebar__filter--box">
 					{% for value in item.values -%}
 					<li data-filter="{{value}}">
 						{% set id = "filter-" + random_int(10) %}
-						<input class="sidebar__filter--checkbox" type="checkbox" value="{{value}}" data-type="{{item.type}}" id="{{id}}" />
+						<input class="sidebar__filter--checkbox visually-hidden" type="checkbox" value="{{value}}" data-type="{{item.type}}" id="{{id}}" />
 						<label class="sidebar__filter--item" for="{{id}}">{{value}}</label>
 					</li>
 					{%- endfor %}
