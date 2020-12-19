@@ -15,7 +15,8 @@ _ Acordeon en barra lateral
 - Selector de grilla en productos
 
 ## Adicionales
-
+- accesibilidad
+- menor cantidad de JS cuando por CSS se aplican animaciones y estado de UI
 
 #### URL destino build
 

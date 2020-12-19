@@ -8,6 +8,6 @@ import {
     HTML, LANG,
 } from './config/constants'
 
-import { SaleView } from './managers/sale'
+import { PageView } from './managers/page'
 
-new SaleView(document.querySelector('#view-sale'))
+new PageView(document.querySelector('#view-sale'))

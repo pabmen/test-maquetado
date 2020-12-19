@@ -9,10 +9,6 @@ $menu-width: 75vw;
 
 		}
 
-		.menu {
-			display: flex;
-		}
-
 		.la-preuve-wrapper {
 			transform: translate($menu-width, 0);
 			
@@ -31,7 +27,7 @@ $menu-width: 75vw;
 }
 
 .menu {
-	display: none;
+	display: flex;
 	flex-direction: column;
 	width: $menu-width;
 	height: 100vh;
@@ -44,7 +40,7 @@ $menu-width: 75vw;
 	top: 0;
 	left: -$menu-width;
 	box-shadow: 10px 0 20px rgba(16, 2, 23, 0.2);
-	
+	padding-top: 2rem;
 	&__links {
 		text-align: center;
 		color: $textwhite;
@@ -71,8 +67,18 @@ $menu-width: 75vw;
 	}
 
 	&__logo {
-		margin: 0 2rem;
+		margin: 0 6rem;
 		max-width: 17rem;
 		margin-bottom: 2rem;
+	}
+
+	&__close {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+
+		img {
+			width: 2.6rem;
+		}
 	}
 }
