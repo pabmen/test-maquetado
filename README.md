@@ -9,10 +9,17 @@ Ejecutar los siguientes comandos para correr el proyecto:
 
 **Requisitos: (Nodejs. + NPM)*
 
+
 Para buildear proyecto y deployar minificado
 
 ```shell
     $ npm run build
+````
+
+Para ejecutar tests (solamente capturas de pantalla mobile y desktop)
+
+```shell
+    $ npm run test
 ````
 
 Cada push a master deploya y se puede ver en la siguiente url:
