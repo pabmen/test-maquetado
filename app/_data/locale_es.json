@@ -193,7 +193,7 @@
 			"thumb": "assets/productos/zapatilla_1.jpg",
 			"category": "pantuflas",
 			"size": ["44", "38"],
-			"color": ["amarillo", "negro"],
+			"color": ["amarillo", "negro", "blanco"],
 			"url": "/"
 		},
 		{
@@ -256,7 +256,7 @@
 			"thumb": "assets/productos/zapatilla_1.jpg",
 			"category": "zapatos",
 			"size": ["36","38","44"],
-			"color": ["azul", "blanco"],
+			"color": ["azul", "blanco", "amarillo"],
 			"url": "/"
 		}
 	],

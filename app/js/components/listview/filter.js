@@ -30,9 +30,11 @@ class ListviewFilter {
 	}
 	
 	filter() {
-		this.normalizedFilter(this.activeFilters)
-		this.items.forEach((item, index) => {
-			let passed = Object.keys(this.activeFilters).every(filter => {
+
+		const curFilter = this.normalizedFilter(this.activeFilters)
+		
+		this.items.forEach(item => {
+			let passed = Object.keys(curFilter).every(filter => {
 
 				/*console.log('el filtro ---> ', filter)
 				console.log('mis datos: ')
@@ -40,8 +42,8 @@ class ListviewFilter {
 
 
 				return item.dataset[filter].split(",").some(current => {
-					//console.log(this.activeFilters[filter][current] ? "activo" : "INACTIVO - saliendo.....")
-					return this.activeFilters[filter][current]
+					//console.log(curFilter[filter][current] ? "activo" : "INACTIVO - saliendo.....")
+					return curFilter[filter][current]
 				})
 			})
 			/*console.log('-----------')
@@ -54,19 +56,33 @@ class ListviewFilter {
 	}
 
 	// chequea si todos los filtros estan desactivados entonces es como si fueran todos activos y devuelve el filtro normalizado para esto
-	normalizedFilter(filter) {
-		let copiedFilter = {
-			...filter
-		}
+	normalizedFilter(originalFilter) {
+		let normalizedFilter = JSON.parse(JSON.stringify(originalFilter))
 
-		Object.keys(copiedFilter).forEach( level => {
+		//console.clear()
+		//console.log(originalFilter)
+		Object.keys(normalizedFilter).forEach( level => {
+			// chequeo si todos los filtros de la categoria estan desactivados
+			let allDeactivated = Object.keys(normalizedFilter[level]).every( filter => {
+				return !normalizedFilter[level][filter]
+			})
 			
-			console.log(Object.keys(copiedFilter[level]).forEach( filter => {
-
-				console.log(filter)
-			}) )
+			if (allDeactivated) {
+				//console.log('all deactivated: ', allDeactivated)
+				//console.log('------')
+				
+				
+				Object.keys(normalizedFilter[level]).forEach( filter => {
+					//console.log('level ', normalizedFilter[level])
+					//console.log('filter ', filter)
+					normalizedFilter[level][filter] = true
+					//console.log(normalizedFilter[level][filter])
+				})
+			}
 		})
-		//items.every(e => e.value === true)
+		
+		//console.log(normalizedFilter)
+		return normalizedFilter
 	}
 }
 
