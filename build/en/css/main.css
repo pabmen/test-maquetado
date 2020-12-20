@@ -910,6 +910,7 @@ html.no-scroll body {
 
 .la-preuve .listing .listing__container {
   width: 100%;
+  max-width: 83rem;
   margin-bottom: 10rem;
   display: flex;
   flex-wrap: wrap;

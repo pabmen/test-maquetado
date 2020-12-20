@@ -32,7 +32,7 @@ class ListviewGrid {
 	}
 
 	changeGrid(size) {
-		this.target.dataset.layout = size
+		this.target.setAttribute('data-layout', size)
 	}
 }
 

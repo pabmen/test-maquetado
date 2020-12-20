@@ -47,6 +47,7 @@
 
 	.listing__container {
 		width: 100%;
+		max-width: 83rem; //ie 11 fix
 		margin-bottom: 10rem;
 		display: flex;
 		flex-wrap: wrap;

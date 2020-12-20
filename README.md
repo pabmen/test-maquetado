@@ -16,8 +16,9 @@ _ Acordeon en barra lateral
 
 ## Adicionales
 - accesibilidad
-- menor cantidad de JS cuando por CSS se aplican animaciones y estado de UI
+- menor cantidad de JS en caso de que por CSS se puedan aplicar animaciones y estados de UI
+- mostrado cantidad de resultados
 
 #### URL destino build
+https://pabmen-test-maquetado.netlify.app/
 
-TBA
