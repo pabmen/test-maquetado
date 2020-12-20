@@ -12,6 +12,7 @@ class ListviewFilter {
 
 		// filtros activos
 		this.activeFilters = options.initialFilter || DEFAULT_FILTER
+		this.onFilter = options.onFilter
 
 		this.bindings()
 		this.filter()
@@ -30,37 +31,32 @@ class ListviewFilter {
 	}
 	
 	filter() {
-
-		const curFilter = this.normalizedFilter(this.activeFilters)
+		const curFilter = this.normalizedFilter(this.activeFilters) // usamos la version normalizada del filtro
+		let passedItems = []
 		
 		this.items.forEach(item => {
+			// chequeo que se cumplan todas las condiciones
 			let passed = Object.keys(curFilter).every(filter => {
-
-				/*console.log('el filtro ---> ', filter)
-				console.log('mis datos: ')
-				console.log(item.dataset[filter].split(","))*/
-
-
+				// con que algun item cumpla esta condicion aceptarlo
 				return item.dataset[filter].split(",").some(current => {
-					//console.log(curFilter[filter][current] ? "activo" : "INACTIVO - saliendo.....")
 					return curFilter[filter][current]
 				})
 			})
-			/*console.log('-----------')
-			console.log("El resultado", passed)*/
-
-			passed ? item.classList.remove('hidden') : item.classList.add('hidden')
-
-
+			if (passed) {
+				item.classList.remove('hidden')
+				passedItems.push(item) // lo agregamos para devolverlo de la funcion
+			} else {
+				item.classList.add('hidden')
+			}
 		})
+
+		typeof this.onFilter === "function" && this.onFilter({items: passedItems})
 	}
 
 	// chequea si todos los filtros estan desactivados entonces es como si fueran todos activos y devuelve el filtro normalizado para esto
 	normalizedFilter(originalFilter) {
 		let normalizedFilter = JSON.parse(JSON.stringify(originalFilter))
 
-		//console.clear()
-		//console.log(originalFilter)
 		Object.keys(normalizedFilter).forEach( level => {
 			// chequeo si todos los filtros de la categoria estan desactivados
 			let allDeactivated = Object.keys(normalizedFilter[level]).every( filter => {
@@ -68,20 +64,13 @@ class ListviewFilter {
 			})
 			
 			if (allDeactivated) {
-				//console.log('all deactivated: ', allDeactivated)
-				//console.log('------')
-				
-				
+				// si estan todos desactivados los invierto y los pongo en true para mandarlo a la func filtro
 				Object.keys(normalizedFilter[level]).forEach( filter => {
-					//console.log('level ', normalizedFilter[level])
-					//console.log('filter ', filter)
 					normalizedFilter[level][filter] = true
-					//console.log(normalizedFilter[level][filter])
 				})
 			}
 		})
 		
-		//console.log(normalizedFilter)
 		return normalizedFilter
 	}
 }

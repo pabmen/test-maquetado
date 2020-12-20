@@ -121,34 +121,41 @@
 		]
 	},
 
-	"grids": [
-		{
-			"label": "Auto",
-			"class": "",
-			"value": "",
-			"selected": true
+	"controls": {
+		"count": {
+			"label": "producto(s)"
 		},
-		{
-			"label": "1 columna",
-			"class": "mobile-only",
-			"value": "cols-1"
-		},
-		{
-			"label": "2 columnas",
-			"class": "",
-			"value": "cols-2"
-		},
-		{
-			"label": "3 columnas",
-			"class": "desktop-only",
-			"value": "cols-3"
-		},
-		{
-			"label": "4 columnas",
-			"class": "desktop-only",
-			"value": "cols-4"
-		}
-	],
+		"layout": [
+			{
+				"label": "0",
+				"class": "",
+				"value": "",
+				"selected": true
+			},
+			{
+				"label": "1",
+				"class": "mobile-only",
+				"value": "cols-1"
+			},
+			{
+				"label": "2",
+				"class": "",
+				"value": "cols-2"
+			},
+			{
+				"label": "3",
+				"class": "desktop-only",
+				"value": "cols-3"
+			},
+			{
+				"label": "4",
+				"class": "desktop-only",
+				"value": "cols-4"
+			}
+		]
+	},
+
+	
 
 	"products": [
 		{

@@ -36,7 +36,10 @@ class PageView {
 			initialFilter[control.dataset.type][control.value] = control.checked
 		})
 
-		new ListviewFilter(this.context, {controls, initialFilter})
+		new ListviewFilter(this.context, {controls, initialFilter, onFilter: (data) => {
+			document.querySelector('#listing-filter-count').textContent = data.items.length
+			
+		}})
 	}
 }
 

@@ -5,13 +5,16 @@
 {%- endmacro -%}
 
 {% set id = "listing-" + random_int(10) %}
-<form>
-	<select data-target="{{id}}" class="listing__container--grid-selector">
-		{% for item in grids -%}
-		<option class="{{item.class}}" value="{{item.value}}" {% if item.selected %}selected{% endif %}>{{item.label}}</option>
-		{% endfor -%}
-	</select>
-</form>
+<div class="listing__controls">
+	<div><span id="listing-filter-count"></span> {{controls.count.label}}</div>
+	<form>
+		<select data-target="{{id}}" class="listing__container--grid-selector">
+			{% for item in controls.layout -%}
+			<option class="{{item.class}}" value="{{item.value}}" {% if item.selected %}selected{% endif %}>{{item.label}}</option>
+			{% endfor -%}
+		</select>
+	</form>
+</div>
 <ul class="listing__container" id="{{id}}">
 	{% for item in listing_data -%}
 	<li class="listing__container--item" data-category="{{item.category}}" data-size="{%- for value in item.size -%}{{value}}{% if not loop.last %},{%endif%}{%endfor %}" data-color="{%- for value in item.color -%}{{value}}{% if not loop.last %},{%endif%}{%endfor %}">
