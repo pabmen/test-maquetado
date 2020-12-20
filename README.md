@@ -30,7 +30,7 @@ Cada push a master deploya y se puede ver en la siguiente url:
 - Menor cantidad de JS en caso de que por CSS se puedan aplicar animaciones y estados de UI
 - Muestro cantidad de resultados
 - Selector de orden según precio
-- Otras techs usadas: nunjucks, gulp, babel, QR + ngrok
+- Otras techs usadas: nunjucks, gulp, babel...
 
 
 ----------
