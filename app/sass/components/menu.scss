@@ -11,6 +11,10 @@ $menu-width: 75vw;
 
 		.la-preuve-wrapper {
 			transform: translate($menu-width, 0);
+
+			.menu {
+				opacity: 1;
+			}
 			
 			&:after {
 				content: "";
@@ -38,6 +42,7 @@ $menu-width: 75vw;
 	justify-content: flex-start;
 	align-items: center;
 	top: 0;
+	opacity: 0;
 	left: -$menu-width;
 	box-shadow: 10px 0 20px rgba(16, 2, 23, 0.2);
 	padding-top: 2rem;

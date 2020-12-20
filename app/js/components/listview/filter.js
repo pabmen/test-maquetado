@@ -1,5 +1,5 @@
 /**
- * Grid Filter
+ * Listview Filter
  * @author Pablo Mendoza
  */
 

@@ -125,6 +125,24 @@
 		"count": {
 			"label": "producto(s)"
 		},
+		"order": [
+			{
+				"label": "Relevancia",
+				"class": "",
+				"value": "*",
+				"selected": true
+			},
+			{
+				"label": "Menor precio",
+				"class": "",
+				"value": "-"
+			},
+			{
+				"label": "Mayor precio",
+				"class": "",
+				"value": "+"
+			}
+		],
 		"layout": [
 			{
 				"label": "0",

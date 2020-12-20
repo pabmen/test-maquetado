@@ -11,12 +11,14 @@ import {
 import {Menu} from '../components/menu/menu'
 import {ListviewGrid} from '../components/listview/grid'
 import {ListviewFilter} from '../components/listview/filter'
+import {ListviewSort} from '../components/listview/sort'
 
 class PageView {
 	constructor(context) {
 		this.context = context
 		this.menu()
-		this.listingColumnChoser()
+		this.layoutChoser()
+		this.sortChoser()
 		this.sidebarFilters()
 	}
 
@@ -24,8 +26,12 @@ class PageView {
 		new Menu(this.context)
 	}
 
-	listingColumnChoser() {
+	layoutChoser() {
 		new ListviewGrid(this.context)
+	}
+	
+	sortChoser() {
+		new ListviewSort(this.context)
 	}
 
 	sidebarFilters() {

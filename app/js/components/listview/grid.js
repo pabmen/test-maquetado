@@ -1,12 +1,12 @@
 /**
- * Grid Selector
+ * Listview Grid Selector
  * @author Pablo Mendoza
  */
 
 
 class ListviewGrid {
 	constructor(context) {
-		this.selector = context.querySelector('.listing__container--grid-selector')
+		this.selector = context.querySelector('.listing__container--layout-selector')
 		if (this.selector) {
 			this.target = document.querySelector(`#${this.selector.dataset.target}`)
 			this.reset()

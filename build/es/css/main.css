@@ -876,6 +876,11 @@ html.no-scroll body {
   text-align: right;
 }
 
+.la-preuve .listing form .listing__container--layout-selector {
+  font-family: 'Glyphter';
+  vertical-align: bottom;
+}
+
 .la-preuve .listing form select {
   display: inline-block;
   font-size: 1.6rem;
@@ -885,11 +890,10 @@ html.no-scroll body {
   margin: 0;
   border: 1px solid #aaa;
   border-radius: .5em;
-  background-color: #E4E8EE;
+  background-color: transparent;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  font-family: 'Glyphter';
 }
 
 .la-preuve .listing form select::-ms-expand {
@@ -999,6 +1003,9 @@ html.no-scroll body {
     -webkit-transform: translate(75vw, 0);
             transform: translate(75vw, 0);
   }
+  .la-preuve.menu-active .la-preuve-wrapper .menu {
+    opacity: 1;
+  }
   .la-preuve.menu-active .la-preuve-wrapper:after {
     content: "";
     position: absolute;
@@ -1023,6 +1030,7 @@ html.no-scroll body {
   justify-content: flex-start;
   align-items: center;
   top: 0;
+  opacity: 0;
   left: -75vw;
   box-shadow: 10px 0 20px rgba(16, 2, 23, 0.2);
   padding-top: 2rem;
