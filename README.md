@@ -1,25 +1,36 @@
 # La Preuve docs
 
-Ejecutar los sigueintes comandos para correr el proyecto:
+Ejecutar los siguientes comandos para correr el proyecto:
 
+```shell
     $ npm install
     $ npm start
+```
 
+**Requisitos: (Nodejs. + NPM)*
 
-Requisitos: (Nodejs. + NPM)
+Para buildear proyecto
+
+```shell
+    $ npm run build
+````
+
+Cada push a master deploya y se puede ver en la siguiente url:
+## https://pabmen-test-maquetado.netlify.app/
 
 ## Opcionales
-- Menu mobile
-_ Acordeon en barra lateral
+- Menú mobile
+- Acordeon en barra lateral
 - Filtros de productos
 - Selector de grilla en productos
 
 ## Adicionales
-- accesibilidad
-- menor cantidad de JS en caso de que por CSS se puedan aplicar animaciones y estados de UI
-- mostrado cantidad de resultados
-- orden segun precio
+- Accesibilidad
+- Menor cantidad de JS en caso de que por CSS se puedan aplicar animaciones y estados de UI
+- Muestro cantidad de resultados
+- Selector de orden según precio
 
-#### URL destino build
-https://pabmen-test-maquetado.netlify.app/
 
+----------
+
+Pablo Javier Mendoza
