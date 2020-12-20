@@ -29,10 +29,14 @@ class PageView {
 	}
 
 	sidebarFilters() {
-		const checkboxes = this.context.querySelectorAll('.sidebar__filter--item')
+		const controls = this.context.querySelectorAll('.sidebar__filter--item')
+		let initialFilter = {category: {}, size: {}, color: {}}
 
-		// in progress
-		console.log(checkboxes)
+		controls.forEach(control => {
+			initialFilter[control.dataset.type][control.value] = control.checked
+		})
+
+		new ListviewFilter(this.context, {controls, initialFilter})
 	}
 }
 

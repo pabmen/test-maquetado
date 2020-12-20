@@ -1,5 +1,5 @@
 /**
- * Sale View
+ * Grid Selector
  * @author Pablo Mendoza
  */
 
@@ -8,6 +8,7 @@ class ListviewGrid {
 	constructor(context) {
 		this.selector = context.querySelector('.listing__container--grid-selector')
 		if (this.selector) {
+			this.target = document.querySelector(`#${this.selector.dataset.target}`)
 			this.reset()
 			this.bindings()
 		}
@@ -24,13 +25,14 @@ class ListviewGrid {
 			const selectedValue = e.target.value
 			if (selectedValue) {
 				this.changeGrid(selectedValue)
+			} else {
+				this.changeGrid('')
 			}
 		})
 	}
 
 	changeGrid(size) {
-		const target = document.querySelector(`#${this.selector.dataset.target}`)
-		target.dataset.layout = size
+		this.target.dataset.layout = size
 	}
 }
 
