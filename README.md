@@ -9,7 +9,7 @@ Ejecutar los siguientes comandos para correr el proyecto:
 
 **Requisitos: (Nodejs. + NPM)*
 
-Para buildear proyecto
+Para buildear proyecto y deployar minificado
 
 ```shell
     $ npm run build
@@ -30,7 +30,7 @@ Cada push a master deploya y se puede ver en la siguiente url:
 - Menor cantidad de JS en caso de que por CSS se puedan aplicar animaciones y estados de UI
 - Muestro cantidad de resultados
 - Selector de orden según precio
-- Templates staticos con nunjucks, tareas con gulp, babel, server con QR con tunel ngrok
+- Otras techs usadas: nunjucks, gulp, babel, QR + ngrok
 
 
 ----------
