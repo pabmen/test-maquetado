@@ -3,6 +3,7 @@
 Ejecutar los siguientes comandos para correr el proyecto:
 
 ```shell
+    $ cd la-preuve-maquetado
     $ npm install
     $ npm start
 ```
