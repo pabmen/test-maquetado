@@ -6,7 +6,6 @@ import Data from '../data/locale_es.json';
 import './Header.scss';
 
 function Header() {
-	const logo = require('../assets/logo.svg');
 	const header = Data.header;
 	const navigation = Data.navigation;
 
@@ -16,7 +15,7 @@ function Header() {
 				<div className="relative">
 					<div className="header__mobile-menu">
 						<a href="#" className="header__mobile-menu--toggle">
-							<img src={logo} alt={header.mobile_menu.caption}/>
+							<img src={header.mobile_menu.icon} alt={header.mobile_menu.caption}/>
 						</a>
 					</div>
 					<Menu/>

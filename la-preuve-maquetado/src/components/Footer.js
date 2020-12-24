@@ -11,7 +11,7 @@ function Footer() {
 			<ul>
 				{
 					links.map((link) =>
-						<li className="footer__link"><a href="{link.url}">{link.label}</a></li>
+						<li className="footer__link"><a href={link.url}>{link.label}</a></li>
 					)
 				}
 			</ul>
