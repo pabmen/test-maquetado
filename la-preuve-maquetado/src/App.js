@@ -8,19 +8,18 @@ import './App.css';
 function App() {
   return (
     <main className="la-preuve-wrapper" id="view-sale">
-      <Head/>
-
-      <Header/>
-			<div class="content-wrapper">
-				<div>
-					<Sidebar/>
-				</div>
-				<div class="listing">
-          <Listing/>
-				</div>
+    	<Head/>
+    	<Header/>
+		<div class="content-wrapper">
+			<div>
+				<Sidebar/>
 			</div>
-      <Footer/>
-			<div class="header__mobile-menu--toggle menu-mobile-helper"></div>
+			<div class="listing">
+				<Listing/>
+			</div>
+		</div>
+      	<Footer/>
+		<div class="header__mobile-menu--toggle menu-mobile-helper"></div>
 
     </main>
   );
