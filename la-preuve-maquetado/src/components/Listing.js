@@ -13,14 +13,49 @@ class Listing extends React.Component {
 		super(props)
 		this.state = {
 			filter: {},
-			order: 'dasdas',
+			order: '*',
 			layout: ''
 		}
 	}
 
-	changeLayout(event) {
-		this.setState({layout: event.target.value});
+	changeLayout(e) {
+		this.setState({layout: e.target.value});
 	}
+	
+	changeOrder(e) {
+		this.setState({order: e.target.value});
+	}
+
+	products() {
+		let data = []
+		const filtered = listing_data.filter(item => {
+			/*
+			let passed = Object.keys(curFilter).every(filter => {
+				// con que algun item cumpla esta condicion aceptarlo
+				return item.dataset[filter].split(",").some(current => {
+					return curFilter[filter][current]
+				})
+			})
+			*/
+			
+			return true//item.price === '5000'
+		})
+		
+		// se junta todo en un array para ordenarlos
+		filtered.map((item) => {
+			data.push(item)
+		})
+		
+		// ordenando elementos
+		if (this.state.order === '+') {
+			data.sort((b, a) => a.price.localeCompare(b.price))
+		} else if (this.state.order === '-') {
+			data.sort((a, b) => a.price.localeCompare(b.price))
+		}
+		
+		return data.map((item, index) => <Product key={index} item={item}/>)
+	}
+
 
 	render() {
 		return (
@@ -28,7 +63,7 @@ class Listing extends React.Component {
 				<div className="listing__controls">
 					<div>{Object.keys(this.state.filter).length} {controls.count.label}</div>
 					<form>
-						<select data-target={id} className="listing__container--sort-selector" >
+						<select data-target={id} className="listing__container--sort-selector" onChange={this.changeOrder.bind(this)} value={this.state.order}>
 							{ controls.order.map(item => <option className={item.class} value={item.value}>{item.label}</option>) }
 						</select>
 						<select data-target={id} className="listing__container--layout-selector" onChange={this.changeLayout.bind(this)} value={this.state.layout}>
@@ -39,7 +74,9 @@ class Listing extends React.Component {
 				</div>
 				<div>{this.state.order}</div>
 				<ul className="listing__container" id={id} data-layout={this.state.layout}>
-					{ listing_data.map(item => <Product item={item} filtered={true}/>) }
+					{
+						this.products()
+					}
 				</ul>
 			</div>
 		)

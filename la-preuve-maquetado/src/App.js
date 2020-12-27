@@ -10,16 +10,16 @@ function App() {
     <main className="la-preuve-wrapper" id="view-sale">
     	<Head/>
     	<Header/>
-		<div class="content-wrapper">
+		<div className="content-wrapper">
 			<div>
 				<Sidebar/>
 			</div>
-			<div class="listing">
+			<div className="listing">
 				<Listing/>
 			</div>
 		</div>
       	<Footer/>
-		<div class="header__mobile-menu--toggle menu-mobile-helper"></div>
+		<div className="header__mobile-menu--toggle menu-mobile-helper"></div>
 
     </main>
   );
