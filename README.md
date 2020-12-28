@@ -24,7 +24,7 @@ Para ejecutar tests (solamente capturas de pantalla mobile y desktop)
 ````
 
 Cada push a master deploya y se puede ver en la siguiente url:
-## https://pabmen-test-maquetado.netlify.app/
+## https://pabmen-test-maquetado.netlify.app/react
 
 ## Opcionales
 - Menú mobile

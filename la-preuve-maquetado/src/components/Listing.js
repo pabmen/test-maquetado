@@ -12,7 +12,10 @@ class Listing extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			filter: {},
+			count: listing_data.length,
+			filter: {
+				'category': 'pantuflas'
+			},
 			order: '*',
 			layout: ''
 		}
@@ -26,8 +29,34 @@ class Listing extends React.Component {
 		this.setState({order: e.target.value});
 	}
 
+	// chequea si todos los filtros estan desactivados entonces es como si fueran todos activos y devuelve el filtro normalizado para esto
+	normalizedFilter(originalFilter) {
+		let normalizedFilter = JSON.parse(JSON.stringify(originalFilter))
+
+
+		console.log(originalFilter)
+
+		Object.keys(normalizedFilter).forEach( level => {
+
+			console.log(level)
+			// chequeo si todos los filtros de la categoria estan desactivados
+			let allDeactivated = Object.keys(normalizedFilter[level]).every( filter => {
+				return !normalizedFilter[level][filter]
+			})
+			
+			if (allDeactivated) {
+				// si estan todos desactivados los invierto y los pongo en true para mandarlo a la func filtro
+				Object.keys(normalizedFilter[level]).forEach( filter => {
+					normalizedFilter[level][filter] = true
+				})
+			}
+		})
+		
+		return normalizedFilter
+	}
+
 	products() {
-		let data = []
+		const data = []
 		const filtered = listing_data.filter(item => {
 			/*
 			let passed = Object.keys(curFilter).every(filter => {
@@ -38,9 +67,9 @@ class Listing extends React.Component {
 			})
 			*/
 			
-			return true//item.price === '5000'
+			return true
 		})
-		
+
 		// se junta todo en un array para ordenarlos
 		filtered.map((item) => {
 			data.push(item)
@@ -52,6 +81,10 @@ class Listing extends React.Component {
 		} else if (this.state.order === '-') {
 			data.sort((a, b) => a.price.localeCompare(b.price))
 		}
+
+		/*this.setState({
+			count: data.length
+		})*/
 		
 		return data.map((item, index) => <Product key={index} item={item}/>)
 	}
@@ -61,7 +94,7 @@ class Listing extends React.Component {
 		return (
 			<div>
 				<div className="listing__controls">
-					<div>{Object.keys(this.state.filter).length} {controls.count.label}</div>
+					<div>{this.state.count} {controls.count.label}</div>
 					<form>
 						<select data-target={id} className="listing__container--sort-selector" onChange={this.changeOrder.bind(this)} value={this.state.order}>
 							{ controls.order.map(item => <option className={item.class} value={item.value}>{item.label}</option>) }

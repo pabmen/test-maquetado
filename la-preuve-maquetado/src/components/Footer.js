@@ -10,8 +10,8 @@ function Footer() {
 		<footer className="footer text-center">
 			<ul>
 				{
-					links.map((link) =>
-						<li className="footer__link"><a href={link.url}>{link.label}</a></li>
+					links.map((link, index) =>
+						<li key={index} className="footer__link"><a href={link.url}>{link.label}</a></li>
 					)
 				}
 			</ul>

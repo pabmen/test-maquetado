@@ -20,7 +20,7 @@ function Sidebar() {
 
 							return (<div className="sidebar__filter--wrapper">
 								<input type="checkbox" checked id={id} className="sidebar__filter--title-checkbox visually-hidden"/>
-								<label for={id} className="sidebar__filter--title">{item.label}</label>
+								<label htmlFor={id} className="sidebar__filter--title">{item.label}</label>
 								<ul className="sidebar__filter--box">
 									{
 										item.values.map(value => {
@@ -28,7 +28,7 @@ function Sidebar() {
 											
 											return (<li data-filter={value}>
 												<input className="sidebar__filter--item visually-hidden" type="checkbox" value={value} data-type={item.type} id={id} />
-												<label className="sidebar__filter--item--label" for={id}>{value}</label>
+												<label className="sidebar__filter--item--label" htmlFor={id}>{value}</label>
 											</li>)
 										})
 									}
